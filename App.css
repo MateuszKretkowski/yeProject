@@ -19,6 +19,68 @@ h4 {
     font-size: 32px;
 }
 
+.text_glow {
+    text-shadow: 0px 0px 4px rgb(255, 255, 255);
+}
+
+.cartoony {
+    font-family: 'Shantell Sans', cursive;
+}
+
+.scroll_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll {
+    top: 70%;
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    filter: blur(0.7px);
+    border: 3px solid white;
+    border-radius: 30%;
+}
+
+.scroll:after {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 48%;
+    width: 2px;
+    height: 7px;
+    background-color: white;
+    filter: blur(0.5px);
+    border-radius: 10%;
+    transition: all 300ms ease;
+    animation: scroll 1.5s ease-out infinite;
+}
+
+@keyframes scroll{
+    0% {
+        top: 40%;
+        transform: scale(1);
+    }
+    25% {
+        top: 30%;
+        transform: scale(1);
+    }
+    50% {
+        top: 20%;
+        transform: scale(1);
+    }
+    75% {
+        top: 30%;
+        transform: scale(0.8);
+    }
+    100% {
+        top: 40%;
+        transform: scale(1);
+    }
+}
+
+/* NAVBAR */
 
 .navBar {
     position: relative;
@@ -39,13 +101,14 @@ h4 {
 
 .navbar_link {
     position: relative;
-    text-shadow: 0px 0px 20px rgb(255, 255, 255);
+    text-shadow: 0px 0px 20px rgb(0, 0, 0);
+    color: white;
     cursor: pointer;
     transition: all 300ms ease;
 }
 
 .navbar_link:hover {
-    text-shadow: 0px 0px 10px rgb(255, 255, 255);
+    text-shadow: 0px 0px 8px rgb(0, 0, 0);
     transform: scale(1.1);
 }
 
@@ -63,7 +126,7 @@ h4 {
 .ye_logo {
     width: 6vw;
     height: auto;
-    filter: blur(1px);
+    filter: blur(0.7px) invert(1);
     text-shadow: 0px 0px 8px rgb(255, 255, 255);
 }
 
@@ -100,7 +163,7 @@ header {
     color: #fefefe;
     filter: blur(0.5px);
     font-family: 'Shantell Sans', cursive;
-    word-spacing: 2vw;
+    word-spacing: 1vw;
 }
 
 .header_subtitle {
@@ -109,3 +172,4 @@ header {
     font-family: 'Shantell Sans', cursive;
     margin-bottom: 15%;
 }
+
