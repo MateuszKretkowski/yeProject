@@ -82,6 +82,11 @@ h4 {
     }
 }
 
+.section_subtitle {
+    font-size: 18px;
+    margin: 12px 12px;
+}
+
 /* NAVBAR */
 
 .navBar {
@@ -139,6 +144,10 @@ h4 {
     position: absolute;
 }
 
+.inverted {
+    transform: rotate(180deg);
+}
+
 /* HEADER */
 
 header {
@@ -189,23 +198,87 @@ header:after {
 
 .ow {
     width: 100vw;
-    height: 90vh;
+    height: 150vh;
     background-color: #242424;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-
 }
 
 .ow_container {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    padding-left: 4vw;
-    gap: 4vw;
-    width: 80%;
-    margin: 24px 24px;
+    flex-direction: column;
+    width: 100%;
+    gap: 24vh;
+    margin-top: 12vh;
+    
+}
+
+.albums_container {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: calc(100% / 2);
+    height: 100%;
+    gap: 12vh;
+}
+
+.overflower {
+    display: flex;
+    align-items: center;
+    height: 350px;
+    overflow: hidden;
+}
+
+.album {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 20vw;
+    height: auto;
+}
+
+.album_vinyl {
+    width: 90%;
+    height: 90%;
+    z-index: 2;
+    border-radius: 8%;
+    -webkit-box-shadow: 0px 0px 34px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 34px 0px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 34px 0px rgba(66, 68, 90, 1);
+}
+
+.album_cd {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: auto;
+    top: 0%;
+    left: 50%;
+    z-index: 5;
+    animation: spin 10000ms linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.album_text-wrapper {
+    content: "";
+    position: absolute;
 }
 
 .kanye_photo-collection {

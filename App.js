@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-    <img src={require("./ye_bg6.jpg")} className="ye_bg" />
+      <img src={require("./ye_bg6.jpg")} className="ye_bg" />
       <div className="navBar">
         <div className="navBar_container">
           <h3 className="navbar_link">MENU</h3>
@@ -14,21 +14,52 @@ function App() {
       </div>
       <header>
         {/* <div className="header_container"> */}
-          {/* <h1 className="header_title">kanYe West</h1> */}
-          {/* <h4 className="header_subtitle">" If you're a fan of <span className="text_glow cartoony">Ye</span>, you're a fan of <span className="text_glow cartoony">Yourself</span> "</h4> */}
-          {/* <div className="scroll" /> */}
+        {/* <h1 className="header_title">kanYe West</h1> */}
+        {/* <h4 className="header_subtitle">" If you're a fan of <span className="text_glow cartoony">Ye</span>, you're a fan of <span className="text_glow cartoony">Yourself</span> "</h4> */}
+        {/* <div className="scroll" /> */}
         {/* </div> */}
       </header>
+      <section className="who">
+        <div className="who_container">
+          <div></div>
+        </div>
+      </section>
       <section className="ow">
-          <h5 className="section_subtitle">WHO IS KANYE?</h5>
-          <h1 className="section_title">THE MOST INFLUENTIAL ARTIST OF EARLY 21 CENTURY</h1>
         <div className="ow_container">
-          <div className="kanye_photo-collection">
-            <img src={require("./ye_bg7.png")} className="kanye_photo" />
+          <div className="introduction-wrapper">
+            <h1 className="section_title">BIBLIOGRAPHY</h1>
           </div>
-          <div className="kanye_overwiew">
-            <h1 className="title">KANYE WEST</h1>
-            <h2 className="subtitle">Ye is the best ofc sasdasdd dadd</h2>
+          <div className="albums_container">
+            <div className="album tcd">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl" src={require("./tcd_vinyl.jpg")} />
+                <img className="album_cd" src={require("./tcd_cd.webp")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>THE COLLEGE DROPOUT</h2>
+                <h4></h4>
+              </div>
+            </div>
+            <div className="album lr">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl" src={require("./lr_vinyl.webp")} />
+                  <img className="album_cd" src={require("./lr_cd.png")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>LATE REGISTRATION</h2>
+                <h4></h4>
+              </div>
+            </div>
+            <div className="album g">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl " src={require("./g_vinyl.webp")} />
+                <img className="album_cd" src={require("./g_cd.png")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>GRADUATION</h2>
+                <h4></h4>
+              </div>
+            </div>
           </div>
         </div>
       </section>
