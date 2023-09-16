@@ -1,6 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 
+
+
 function App() {
   return (
     <div className="App">
@@ -25,6 +27,8 @@ function App() {
         </div>
       </section>
       <section className="ow">
+      <img src={require("./ye_section-bg.png")} className="ye_bg inverted" />
+      <img src={require("./ye_section-bg.png")} className="ye_bg nextone" />
         <div className="ow_container">
           <div className="introduction-wrapper">
             <h1 className="section_title">BIBLIOGRAPHY</h1>

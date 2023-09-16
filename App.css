@@ -9,6 +9,11 @@
     color: white;
 }
 
+.nextone {
+    top: 66.7% !important;
+    transform: scaleX(-1) !important;
+}
+
 h3 {
     font-size: 26px;
 }
@@ -138,6 +143,7 @@ h4 {
 }
 
 .ye_bg {
+    top: 0%;
     width: 100vw;
     height: 100vh;
     z-index: -5;
@@ -197,9 +203,9 @@ header:after {
 /* OVERVIEW */
 
 .ow {
+    position: relative;
     width: 100vw;
     height: 150vh;
-    background-color: #242424;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,17 +219,15 @@ header:after {
     width: 100%;
     gap: 24vh;
     margin-top: 12vh;
-    
 }
 
 .albums_container {
     display: flex;
-    justify-content:space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: calc(100% / 2);
+    width: calc(100% / 5);
     height: 100%;
-    gap: 12vh;
 }
 
 .overflower {
@@ -238,15 +242,15 @@ header:after {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    width: 20vw;
+    width: 60%;
     height: auto;
+    z-index: 5;
 }
 
 .album_vinyl {
     width: 90%;
     height: 90%;
-    z-index: 2;
+    z-index: 5;
     border-radius: 8%;
     -webkit-box-shadow: 0px 0px 34px 0px rgba(66, 68, 90, 1);
     -moz-box-shadow: 0px 0px 34px 0px rgba(66, 68, 90, 1);
@@ -259,9 +263,10 @@ header:after {
     width: 90%;
     height: auto;
     top: 0%;
-    left: 50%;
-    z-index: 5;
+    left: 0%;
+    z-index: -1 !important;
     animation: spin 10000ms linear infinite;
+    
 }
 
 @keyframes spin {
