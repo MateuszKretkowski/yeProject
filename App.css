@@ -227,8 +227,7 @@ header:after {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 100%;
-    max-width: calc(90%);
+    width: 80%;
     height: 100%;
 }
 
@@ -244,13 +243,14 @@ header:after {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 12%;
+    width: 11vw;
+    margin: 18px 18px;
     height: auto;
     z-index: 5;
 }
 
 .lr {
-    width: 11%;
+    width: 10vw;
 }
 
 .album_vinyl {

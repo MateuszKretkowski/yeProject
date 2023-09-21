@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useCallback } from "react";
-import { useTransition, animated } from "@react-spring/web";
+import { motion } from "framer-motion"
 
 // export const UseTransitionDemoPage = () => {
 //   const [index, setIndex] = useState(0);
@@ -56,7 +56,15 @@ function App() {
             <h1 className="section_title">YE</h1>
           </div>
           <div className="albums_container">
-            <animated.div className="album tcd">
+            <motion.div className="album tcd"
+            whileHover={{scale: 1.1}}
+            whileTap={{scale: 0.9}}
+            transition={{
+  ease: "linear",
+  duration: 2,
+  x: { duration: 1 }
+}}
+            >
               <figure className="album_img-wrapper">
                 <img className="album_vinyl" src={require("./tcd_vinyl.jpg")} />
                 <img className="album_cd" src={require("./tcd_cd.webp")} />
@@ -65,8 +73,8 @@ function App() {
                 <h2>THE COLLEGE DROPOUT</h2>
                 <h4></h4>
               </div>
-            </animated.div>
-            <animated.div className="album lr">
+            </motion.div>
+            <motion.div className="album lr">
               <figure className="album_img-wrapper">
                 <img className="album_vinyl" src={require("./lr_vinyl.webp")} />
                 <img className="album_cd" src={require("./lr_cd.png")} />
@@ -75,8 +83,8 @@ function App() {
                 <h2>LATE REGISTRATION</h2>
                 <h4></h4>
               </div>
-            </animated.div>
-            <animated.div className="album g">
+            </motion.div>
+            <motion.div className="album g">
               <figure className="album_img-wrapper">
                 <img className="album_vinyl " src={require("./g_vinyl.webp")} />
                 <img className="album_cd" src={require("./g_cd.png")} />
@@ -85,7 +93,97 @@ function App() {
                 <h2>GRADUATION</h2>
                 <h4></h4>
               </div>
-            </animated.div>
+            </motion.div>
+            <motion.div className="album g">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl " src={require("./g_vinyl.webp")} />
+                <img className="album_cd" src={require("./g_cd.png")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>080'S AND HEARTBREAK</h2>
+                <h4></h4>
+              </div>
+            </motion.div>
+            <motion.div className="album g">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl " src={require("./g_vinyl.webp")} />
+                <img className="album_cd" src={require("./g_cd.png")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>MY BEAUTIFUL DARK TWISTED FANTASY</h2>
+                <h4></h4>
+              </div>
+            </motion.div>
+            <motion.div className="album g">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl " src={require("./g_vinyl.webp")} />
+                <img className="album_cd" src={require("./g_cd.png")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>WATCH THE THRONE</h2>
+                <h4></h4>
+              </div>
+            </motion.div>
+            <motion.div className="album g">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl " src={require("./g_vinyl.webp")} />
+                <img className="album_cd" src={require("./g_cd.png")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>YEEZUS</h2>
+                <h4></h4>
+              </div>
+            </motion.div>
+            <motion.div className="album g">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl " src={require("./g_vinyl.webp")} />
+                <img className="album_cd" src={require("./g_cd.png")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>THE LIFE OF PABLO</h2>
+                <h4></h4>
+              </div>
+            </motion.div>
+            <motion.div className="album g">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl " src={require("./g_vinyl.webp")} />
+                <img className="album_cd" src={require("./g_cd.png")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>YE</h2>
+                <h4></h4>
+              </div>
+            </motion.div>
+            <motion.div className="album g">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl " src={require("./g_vinyl.webp")} />
+                <img className="album_cd" src={require("./g_cd.png")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>KIDS SEE GHOSTS</h2>
+                <h4></h4>
+              </div>
+            </motion.div>
+            <motion.div className="album g">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl " src={require("./g_vinyl.webp")} />
+                <img className="album_cd" src={require("./g_cd.png")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>JESUS IS KING</h2>
+                <h4></h4>
+              </div>
+            </motion.div>
+            <motion.div className="album g">
+              <figure className="album_img-wrapper">
+                <img className="album_vinyl " src={require("./g_vinyl.webp")} />
+                <img className="album_cd" src={require("./g_cd.png")} />
+              </figure>
+              <div className="album_text-wrapper">
+                <h2>DONDA</h2>
+                <h4></h4>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
