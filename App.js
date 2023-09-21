@@ -1,7 +1,29 @@
 import logo from "./logo.svg";
 import "./App.css";
+import React, { useState, useCallback } from "react";
+import { useTransition, animated } from "@react-spring/web";
 
+// export const UseTransitionDemoPage = () => {
+//   const [index, setIndex] = useState(0);
+//   const onClick = useCallback(
+//     () => setIndex((state) => (state + 1) % items.length),
+//     []
+//   );
+//   const transitions = useTransition(index, (p) => p, {
+//     from: { opacity: 0, top: 0, left: 0 },
+//     enter: { opacity: 1, top: 50, left: 50 },
+//     leave: { opacity: 0, top: 0, left: 0 },
+//   });
 
+//   return (
+//     <div className="albums_container" onClick={onClick}>
+//       {transitions.map(({ item, props, key }) => {
+//         const Page = items[item];
+//         return <Page key={key} style={props} />;
+//       })}
+//     </div>
+//   );
+// };
 
 function App() {
   return (
@@ -27,14 +49,14 @@ function App() {
         </div>
       </section>
       <section className="ow">
-      <img src={require("./ye_section-bg.png")} className="ye_bg inverted" />
-      <img src={require("./ye_section-bg.png")} className="ye_bg nextone" />
+        <img src={require("./ye_section-bg.png")} className="ye_bg inverted" />
+        <img src={require("./ye_section-bg.png")} className="ye_bg nextone" />
         <div className="ow_container">
           <div className="introduction-wrapper">
-            <h1 className="section_title">BIBLIOGRAPHY</h1>
+            <h1 className="section_title">YE</h1>
           </div>
           <div className="albums_container">
-            <div className="album tcd">
+            <animated.div className="album tcd">
               <figure className="album_img-wrapper">
                 <img className="album_vinyl" src={require("./tcd_vinyl.jpg")} />
                 <img className="album_cd" src={require("./tcd_cd.webp")} />
@@ -43,18 +65,18 @@ function App() {
                 <h2>THE COLLEGE DROPOUT</h2>
                 <h4></h4>
               </div>
-            </div>
-            <div className="album lr">
+            </animated.div>
+            <animated.div className="album lr">
               <figure className="album_img-wrapper">
                 <img className="album_vinyl" src={require("./lr_vinyl.webp")} />
-                  <img className="album_cd" src={require("./lr_cd.png")} />
+                <img className="album_cd" src={require("./lr_cd.png")} />
               </figure>
               <div className="album_text-wrapper">
                 <h2>LATE REGISTRATION</h2>
                 <h4></h4>
               </div>
-            </div>
-            <div className="album g">
+            </animated.div>
+            <animated.div className="album g">
               <figure className="album_img-wrapper">
                 <img className="album_vinyl " src={require("./g_vinyl.webp")} />
                 <img className="album_cd" src={require("./g_cd.png")} />
@@ -63,7 +85,7 @@ function App() {
                 <h2>GRADUATION</h2>
                 <h4></h4>
               </div>
-            </div>
+            </animated.div>
           </div>
         </div>
       </section>
