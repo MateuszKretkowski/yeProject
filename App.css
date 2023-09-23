@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Serif+Display:wght@300;400;500&display=swap');
+
+@font-face{
+    font-family: 'ye_font';
+    src: url(./ye_font.ttf);
+}
+
+.ye_text {
+    font-family: ye_font;
+    color: #0bb636;
+}
+
 * {
     border: none;
     margin: 0;
@@ -219,7 +230,7 @@ header:after {
     flex-direction: column;
     width: 100%;
     gap: 25vh;
-    margin-top: 12vh;
+    margin-top: 16vh;
 }
 
 .albums_container {
@@ -290,6 +301,11 @@ header:after {
 .album_text-wrapper {
     content: "";
     position: absolute;
+    z-index: -1;
+}
+
+.yeezus {
+    width: 12vw;
 }
 
 .kanye_photo-collection {
