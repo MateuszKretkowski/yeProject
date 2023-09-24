@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import React, { useState, useCallback } from "react";
-import { motion } from "framer-motion"
+import React, { useState, useCallback, useEffect } from "react";
+import { motion, AnimatePresence, useAnimate, usePresence } from "framer-motion"
 
 // export const UseTransitionDemoPage = () => {
 //   const [index, setIndex] = useState(0);
@@ -24,6 +24,85 @@ import { motion } from "framer-motion"
 //     </div>
 //   );
 // };
+
+// <motion.div className="album tcd"
+// whileHover={{scale: 1.1}}
+// whileTap={{scale: 0.9}}
+// transition={{
+// type: "spring",
+// x: { duration: 5 },
+// ref={scope}
+// }}
+// >
+//   <figure className="album_img-wrapper">
+//     <img className="album_vinyl" src={require("./tcd_vinyl.jpg")} />
+//     <img className="album_cd" src={require("./tcd_cd.webp")} />
+//   </figure>
+//   <div className="album_text-wrapper">
+//     <h2>THE COLLEGE DROPOUT</h2>
+//     <h4></h4>
+//   </div>
+// </motion.div>
+
+const albums = [
+  { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""},
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""}  ,
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""},
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""},
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""},
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""},
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""},
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""},
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""},
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""},
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""},
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""},
+
+    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
+    titleClass: "", description: "His first album", descriptionClass: ""}
+];
+
+// const dropIn = {
+//   hidden: {
+//     y:
+//   }
+// }   LATER
 
 function App() {
   return (
@@ -61,7 +140,7 @@ function App() {
             whileTap={{scale: 0.9}}
             transition={{
   type: "spring",
-  x: { duration: 0.02s }
+  x: { duration: 5 },
 }}
             >
               <figure className="album_img-wrapper">
