@@ -1,7 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useCallback, useEffect } from "react";
-import { motion, AnimatePresence, useAnimate, usePresence } from "framer-motion"
+import {
+  motion,
+  AnimatePresence,
+  useAnimate,
+  usePresence,
+} from "framer-motion";
 
 // export const UseTransitionDemoPage = () => {
 //   const [index, setIndex] = useState(0);
@@ -45,57 +50,161 @@ import { motion, AnimatePresence, useAnimate, usePresence } from "framer-motion"
 // </motion.div>
 
 const albums = [
-  { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""},
+  {
+    id: 1,
+    albumclass: "tcd",
+    vinylClass: "tcd_vinyl",
+    vinylSrc: "tcd_vinyl.jpg",
+    cdSrc: "tcd_cd.webp",
+    cdClass: "tcd_cd",
+    title: "The College Dropout",
+    titleClass: "tcd_title",
+    description: "His first album",
+    descriptionClass: "tcd_desc",
+  },
 
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""}  ,
+  {
+    id: 2,
+    albumclass: "lr",
+    vinylClass: "lr_vinyl",
+    vinylSrc: "lr_vinyl.webp",
+    cdSrc: "lr_cd.png",
+    cdClass: "lr_cd",
+    title: "Late Registration",
+    titleClass: "lr_title",
+    description: "His first album",
+    descriptionClass: "lr_desc",
+  },
 
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""},
+  {
+    id: 3,
+    albumclass: "g",
+    vinylClass: "g_vinyl",
+    vinylSrc: "g_vinyl.webp",
+    cdSrc: "g_cd.png",
+    cdClass: "g_cd",
+    title: "Graduation",
+    titleClass: "g_title",
+    description: "His first album",
+    descriptionClass: "g_desc",
+  },
 
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""},
+  {
+    id: 4,
+    albumclass: "808's",
+    vinylClass: "808's_vinyl",
+    vinylSrc: "080's_vinyl.jpg",
+    cdSrc: "808's_cd.png",
+    cdClass: "808's_cd",
+    title: "808's and Heartbeak",
+    titleClass: "808's_title",
+    description: "His first album",
+    descriptionClass: "808's_desc",
+  },
 
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""},
+  {
+    id: 5,
+    albumclass: "mbdtf",
+    vinylClass: "mbdtf_vinyl",
+    vinylSrc: "mbdtf_vinyl.jpg",
+    cdSrc: "mbdtf_cd.png",
+    cdClass: "mbdtf_cd",
+    title: "My Beautiful Dark Twisted Fantasy",
+    titleClass: "mbdtf_title",
+    description: "His first album",
+    descriptionClass: "mbdtf_desc",
+  },
 
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""},
+  {
+    id: 6,
+    albumclass: "wtt",
+    vinylClass: "wtt_vinyl",
+    vinylSrc: "wtt_vinyl.jpg",
+    cdSrc: "wtt_cd.png",
+    cdClass: "wtt_cd",
+    title: "Watch The Throne",
+    titleClass: "wtt_title",
+    description: "His first album",
+    descriptionClass: "wtt_desc",
+  },
 
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""},
+  {
+    id: 7,
+    albumclass: "yeezus",
+    vinylClass: "yeezus_vinyl",
+    vinylSrc: "yeezus_vinyl.jpg",
+    cdSrc: "yeezus_cd.png",
+    cdClass: "yeezus_cd",
+    title: "Yeezus",
+    titleClass: "yeezus_title",
+    description: "His first album",
+    descriptionClass: "yeezus_desc",
+  },
 
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""},
+  {
+    id: 8,
+    albumclass: "tlop",
+    vinylClass: "tlop_vinyl",
+    vinylSrc: "tlof_vinyl.jpg",
+    cdSrc: "tlof_cd.png",
+    cdClass: "tlop_cd",
+    title: "The Life of Pablo",
+    titleClass: "",
+    description: "His first album",
+    descriptionClass: "tlop_desc",
+  },
 
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""},
+  {
+    id: 9,
+    albumclass: "ye",
+    vinylClass: "ye_vinyl",
+    vinylSrc: "ye_vinyl.jpg",
+    cdSrc: "ye_cd.png",
+    cdClass: "ye_cd",
+    title: "Ye",
+    titleClass: "ye_title",
+    description: "His first album",
+    descriptionClass: "ye_desc",
+  },
 
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""},
+  {
+    id: 10,
+    albumclass: "ksg",
+    vinylClass: "ksg_vinyl",
+    vinylSrc: "ksg_vinyl.jpeg",
+    cdSrc: "ksg_cd.png",
+    cdClass: "ksg_cd",
+    title: "Kids See Ghosts",
+    titleClass: "ksg_title",
+    description: "His first album",
+    descriptionClass: "ksg_desc",
+  },
 
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""},
+  {
+    id: 11,
+    albumclass: "jik",
+    vinylClass: "jik_vinyl",
+    vinylSrc: "jis_vinyl.jpg",
+    cdSrc: "jis_cd.png",
+    cdClass: "jik_cd",
+    title: "Jesus is King",
+    titleClass: "jik_title",
+    description: "His first album",
+    descriptionClass: "jik_desc",
+  },
 
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""},
-
-    { id: 1, albumclass: "tcd", vinylClass: "", vinylSrc: "tcd_vinyl.jpg",
-    cdSrc: "tcd_cd.webp", cdClass: "", title: "The College Dropout", 
-    titleClass: "", description: "His first album", descriptionClass: ""}
+  {
+    id: 12,
+    albumclass: "donda",
+    vinylClass: "donda_vinyl",
+    vinylSrc: "donda_vinyl.jpg",
+    cdSrc: "donda_cd.png",
+    cdClass: "donda_cd",
+    title: "DONDA",
+    titleClass: "donda_title",
+    description: "His first album",
+    descriptionClass: "donda_desc",
+  },
 ];
 
 // const dropIn = {
@@ -134,134 +243,31 @@ function App() {
           <div className="introduction-wrapper">
             <h1 className="section_title ye_text">YE</h1>
           </div>
-          <div className="albums_container">
-            <motion.div className="album tcd"
-            whileHover={{scale: 1.1}}
-            whileTap={{scale: 0.9}}
-            transition={{
-  type: "spring",
-  x: { duration: 5 },
-}}
-            >
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl" src={require("./tcd_vinyl.jpg")} />
-                <img className="album_cd" src={require("./tcd_cd.webp")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>THE COLLEGE DROPOUT</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
-            <motion.div className="album lr">
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl" src={require("./lr_vinyl.webp")} />
-                <img className="album_cd" src={require("./lr_cd.png")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>LATE REGISTRATION</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
-            <motion.div className="album g">
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl " src={require("./g_vinyl.webp")} />
-                <img className="album_cd" src={require("./g_cd.png")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>GRADUATION</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
-            <motion.div className="album 808">
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl " src={require("./080's_vinyl.jpg")} />
-                <img className="album_cd" src={require("./808's cd.png")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>080'S AND HEARTBREAK</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
-            <motion.div className="album mbdtf">
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl " src={require("./mbdtf_vinyl.jpg")} />
-                <img className="album_cd" src={require("./mbdtf_cd.png")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>MY BEAUTIFUL DARK TWISTED FANTASY</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
-            <motion.div className="album wtt">
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl " src={require("./wtt_vinyl.jpg")} />
-                <img className="album_cd" src={require("./wtt_cd.png")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>WATCH THE THRONE</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
-            <motion.div className="album yeezus">
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl " src={require("./yeezus_vinyl.jpg")} />
-                <img className="album_cd" src={require("./yeezus_cd.png")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>YEEZUS</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
-            <motion.div className="album tlop">
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl " src={require("./tlof_vinyl.jpg")} />
-                <img className="album_cd" src={require("./tlof_cd.png")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>THE LIFE OF PABLO</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
-            <motion.div className="album ye">
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl " src={require("./ye_vinyl.jpg")} />
-                <img className="album_cd" src={require("./ye_cd.png")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>YE</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
-            <motion.div className="album ksg">
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl " src={require("./ksg_vinyl.jpeg")} />
-                <img className="album_cd" src={require("./ksg_cd.png")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>KIDS SEE GHOSTS</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
-            <motion.div className="album jik">
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl " src={require("./jis_vinyl.jpg")} />
-                <img className="album_cd" src={require("./jis_cd.png")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>JESUS IS KING</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
-            <motion.div className="album donda">
-              <figure className="album_img-wrapper">
-                <img className="album_vinyl " src={require("./donda_vinyl.jpg")} />
-                <img className="album_cd" src={require("./donda_cd.png")} />
-              </figure>
-              <div className="album_text-wrapper">
-                <h2>DONDA</h2>
-                <h4></h4>
-              </div>
-            </motion.div>
+          <div className={"albums_container"}>
+            {albums.map((album) => (
+              <motion.div
+                className={"album " + album.className}
+                key={album.id}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{
+                  type: "spring",
+                  x: { duration: 1 },
+                }}
+              >
+                <figure className="album_img-wrapper">
+                  <img
+                    className={"album_vinyl " + album.vinylClass}
+                    src={require("./" + album.vinylSrc)}
+                  />
+                  <img className={"album_cd " + album.cdClass} src={require("./" + album.cdSrc)} />
+                </figure>
+                <div className="album_text-wrapper">
+                  <h2 className={album.titleClass}>{album.title}</h2>
+                  <h4 className={album.descriptionClass}>{album.description}</h4>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
