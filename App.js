@@ -6,6 +6,7 @@ import {
   AnimatePresence,
   useAnimate,
   usePresence,
+  animate,
 } from "framer-motion";
 
 // export const UseTransitionDemoPage = () => {
@@ -213,6 +214,22 @@ const albums = [
 //   }
 // }   LATER
 
+let albumInView = false
+
+const fadeInAnimationVariants = {
+  initial: {scale: 0, y: 200, opacity: 0},
+  animate: {scale: 1, y: 0, opacity: 1}
+}
+
+const albumUnCover = {
+  animate: {scale: 1.2, y: 200},
+  leave: {scale: 0, y: 0}
+}
+
+function onTap1() {
+  return("animate")
+}
+
 function App() {
   return (
     <div className="App">
@@ -244,17 +261,29 @@ function App() {
             <h1 className="section_title ye_text">YE</h1>
           </div>
           <div className={"albums_container"}>
-            {albums.map((album) => (
+            {albums.map((album, i) => (
+              <motion.div
+                key={album.id}
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                viewport={{once: false}}
+                transition={{                   
+                  type: "spring",
+                  duration: 0.5,
+                  duration: 0.3, delay: i <= 5 ? i = 0.3 : i = 0.38}}
+              >
               <motion.div
                 className={"album " + album.className}
                 key={album.id}
+                variants={albumUnCover}
+                initial=""
+                onClick={onTap1}
+                leave="leave"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                transition={{
-                  type: "spring",
-                  x: { duration: 1 },
-                }}
               >
+
                 <figure className="album_img-wrapper">
                   <img
                     className={"album_vinyl " + album.vinylClass}
@@ -266,6 +295,7 @@ function App() {
                   <h2 className={album.titleClass}>{album.title}</h2>
                   <h4 className={album.descriptionClass}>{album.description}</h4>
                 </div>
+              </motion.div>
               </motion.div>
             ))}
           </div>
